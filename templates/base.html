@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='homepage.css')}}">
+        <title>WatchWhat</title>
 </head>
 <body>
-
+        <div id="header-homepage" class="header">
+                <p>WatchWhat</p>
+                {% block header %}
+                {% endblock %}
+        </div>
+        {% block login %}
+        {% endblock %}
+        {% block signup %}
+        {% endblock %}
 </body>
 </html>
