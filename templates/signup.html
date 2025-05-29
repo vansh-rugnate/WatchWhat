@@ -17,10 +17,25 @@
         <form id="signup-form" class="form" action="{{url_for('signup')}}" method="post">
                 <input type="text" name="username" value="" placeholder="Enter a username" id="username-signup-field" class="input-field">
                 <input type="password" name="password" value="" placeholder="Enter a password" id="password-signup-field" class="input-field">
+                <div class="show-password-container">
+                        <input type="checkbox" onclick="togglePassword()" id="toggle-password">
+                        <label for="toggle-password">Show Password</label>
+                </div>
                 <input type="submit" value="Sign Up" id="signup-button" class="button">
         </form>
 </div>
 <script>
+        function togglePassword() {
+                isChecked = document.getElementById("toggle-password").checked;
+                passwordField = document.getElementById("password-signup-field");
+
+                if (isChecked) {
+                        passwordField.type = "text";
+                } else {
+                        passwordField.type = "password";
+                }
+        }
+
         document.getElementById("signup-form").addEventListener("submit", function(event) {
                 let username = document.getElementById("username-signup-field").value;
                 let password = document.getElementById("password-signup-field").value;

@@ -124,6 +124,13 @@ body {
     color: transparent;
 }
 
+.show-password-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 25rem;
+}
+
 .button {
     width: 15rem;
     height: 4rem;
