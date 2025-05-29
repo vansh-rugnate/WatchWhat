@@ -64,7 +64,7 @@ def signup():
         session["username"] = username
 
         return redirect(url_for("dashboard"))
-    return render_template("signup.html", pagename="Sign Up")
+    return render_template("signup.html", pagename="Signup")
 
 
 @app.route("/logout")
