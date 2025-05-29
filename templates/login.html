@@ -14,10 +14,27 @@
         {% if error %}
         <p id="login-error" class="error">{{error}}</p>
         {% endif %}
-        <form class="form" action="{{url_for('login')}}" method="post">
+        <form id="login-form" class="form" action="{{url_for('login')}}" method="post">
                 <input type="text" name="username" placeholder="Enter your username" id="username-login-field" class="input-field">
                 <input type="password" name="password" placeholder="Enter your password" id="password-login-field" class="input-field">
                 <input type="submit" value="Login" id="login-button" class="button">
         </form>
 </div>
+<script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+                let username = document.getElementById("username-login-field").value;
+                let password = document.getElementById("password-login-field").value;
+
+                if (username === "" && password === "") {
+                        window.alert("Please enter a username and password!");
+                        event.preventDefault()
+                } else if (username === "") {
+                        window.alert("Please enter a username!");
+                        event.preventDefault()
+                } else if (password === "") {
+                        window.alert("Please enter a password!");
+                        event.preventDefault()
+                }
+        });
+</script>
 {% endblock %}
