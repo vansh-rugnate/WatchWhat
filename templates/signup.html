@@ -11,13 +11,13 @@
 
 {% block body %}
 <div id="signup-section" class="container form-flexbox">
+        {% if error %}
+        <p id="signup-error" class="error">{{error}}</p>
+        {% endif %}
         <form class="form" action="{{url_for('signup')}}" method="post">
                 <input type="text" name="username" placeholder="Enter a username" id="username-signup-field" class="input-field">
                 <input type="password" name="password" placeholder="Enter a password" id="password-signup-field" class="input-field">
                 <input type="submit" value="Sign Up" id="signup-button" class="button">
         </form>
-        {% if error %}
-        <p id="signup-error" class="error">{{error}}</p>
-        {% endif %}
 </div>
 {% endblock %}
