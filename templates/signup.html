@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 
-{% block header %}
+{% block pagename %}
+<p class="pagename">{{pagename}}</p>
+{% endblock %}
+
+{% block links %}
 <a href="{{url_for('home')}}">Home</a>
 <a href="{{url_for('login')}}">Login</a>
 {% endblock %}
 
 {% block body %}
-<div id="signup-section" class="container">
-    <form action="{{url_for('signup')}}" method="post">
-        <input type="text" name="username" placeholder="Enter a username" id="username-signup-field" class="input-field">
-        <input type="password" name="password" placeholder="Enter a password" id="password-signup-field" class="input-field">
-        <input type="submit" value="Sign Up" id="signup-button" class="button">
-    </form>
-    {% if error %}
-    <p id="signin-error" class="error">{{error}}</p>
-    {% endif %}
+<div id="signup-section" class="container form-flexbox">
+        <form class="form" action="{{url_for('signup')}}" method="post">
+                <input type="text" name="username" placeholder="Enter a username" id="username-signup-field" class="input-field">
+                <input type="password" name="password" placeholder="Enter a password" id="password-signup-field" class="input-field">
+                <input type="submit" value="Sign Up" id="signup-button" class="button">
+        </form>
+        {% if error %}
+        <p id="signup-error" class="error">{{error}}</p>
+        {% endif %}
 </div>
 {% endblock %}

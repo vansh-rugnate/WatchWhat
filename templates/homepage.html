@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
-{% block header %}
-        <p>{{pagename}}</p>
-        <a href="{{url_for('login')}}">Login</a>
-        <a href="{{url_for('signup')}}">Sign Up</a>
+{% block pagename %}
+<p class="pagename">{{pagename}}</p>
+{% endblock %}
+
+{% block links %}
+<a href="{{url_for('login')}}">Login</a>
+<a href="{{url_for('signup')}}">Sign Up</a>
 {% endblock %}

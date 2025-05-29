@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
-{% block header %}
-<p>{{pagename}}</p>
+{% block pagename %}
+<p class="pagename">{{pagename}}</p>
+{% endblock %}
+
+{% block links %}
 <a href="{{url_for('logout')}}">Logout</a>
 {% endblock %}
 

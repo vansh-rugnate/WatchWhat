@@ -43,8 +43,8 @@ def login():
             session["username"] = username
             return redirect(url_for("dashboard"))
         else:
-            return render_template("login.html", error="Invalid username or password!")
-    return render_template("login.html")
+            return render_template("login.html", pagename="Login", error="Invalid username or password!")
+    return render_template("login.html", pagename="Login")
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -54,7 +54,7 @@ def signup():
         password = request.form['password']
 
         if User.query.filter_by(username=username).first():
-            return render_template("signup.html", error="This user is already registered!")
+            return render_template("signup.html", pagename="Sign Up", error="This user is already registered!")
 
         new_user = User(username=username)
         new_user.set_password(password)
@@ -64,7 +64,7 @@ def signup():
         session["username"] = username
 
         return redirect(url_for("dashboard"))
-    return render_template("signup.html")
+    return render_template("signup.html", pagename="Sign Up")
 
 
 @app.route("/logout")

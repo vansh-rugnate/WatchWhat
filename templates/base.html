@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
-        <link rel="stylesheet" href="{{url_for('static', filename='homepage.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
         <title>WatchWhat</title>
 </head>
 <body>
-        <div id="header-homepage" class="header">
-                <p>WatchWhat</p>
-                {% block header %}
-                {% endblock %}
+        <div class="header">
+                <div id="homepage-titles">
+                        <p id="title">WatchWhat</p>
+                        {% block pagename %}
+                        {% endblock %}
+                </div>
+                <div id="nav-links">
+                        {% block links %}
+                        {% endblock %}
+                </div>
         </div>
         {% block body %}
         {% endblock %}

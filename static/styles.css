@@ -1,0 +1,125 @@
+/* Basic reset for body and common elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+
+
+/*  HEADER  */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10rem;
+    background-color: rgba(51, 0, 90, 1);
+    color: white;
+    padding: 1rem;
+}
+
+.header a {
+  color: rgba(228, 36, 36, 1);
+  text-decoration: none;
+}
+.header a:hover {
+  color: rgba(255, 180, 180, 1);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#title {
+    background-color: black;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    color: rgba(42, 184, 255, 1);
+    font-size: 1.5rem;
+    font-family: Marker Felt, fantasy;
+}
+
+.pagename {
+    color: rgba(42, 184, 255, 1);
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+#homepage-titles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12rem;
+}
+
+#nav-links {
+    background-color: black;
+    padding: 0.7rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-size: 1rem;
+    margin-right: 2rem;
+    font-family: Verdana, sans-serif;
+}
+
+
+
+/*  BODY  */
+
+.container {
+    width: 75%;
+    height: 35rem;
+    background-color: rgba(51, 0, 90, 1);
+    border: solid 0.1rem black;
+    border-radius: 2rem;
+    padding: 3rem;
+    margin-top: 5rem;
+    margin-left: 12.5%;
+    text-align: center;
+    box-shadow: 0 0 20px black;
+}
+
+.form-flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field {
+    width: 30rem;
+    height: 4rem;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 0.3rem;
+    font-family: Verdana, sans-serif;
+}
+.input-field:focus {
+    outline: none;
+    box-shadow: 1px 1px 20px white;
+}
+
+.button {
+    width: 10rem;
+    height: 3rem;
+    margin: 3rem;
+}
