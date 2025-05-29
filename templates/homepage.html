@@ -5,6 +5,12 @@
 {% endblock %}
 
 {% block links %}
+{% if isInSession %}
+<a href="{{url_for('dashboard')}}">Dashboard</a>
+<a href="{{url_for('logout')}}">Logout</a>
+{% endif %}
+{% if not isInSession %}
 <a href="{{url_for('login')}}">Login</a>
-<a href="{{url_for('signup')}}">Sign Up</a>
+<a href="{{url_for('signup')}}">Signup</a>
+{% endif %}
 {% endblock %}

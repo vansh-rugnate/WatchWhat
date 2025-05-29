@@ -26,10 +26,10 @@ class User(db.Model):
 
 @app.route("/")
 def home():
+    is_in_session = False
     if "username" in session:
-        return redirect(url_for("dashboard"))
-    else:
-        return render_template("homepage.html", pagename="Home")
+        is_in_session = True
+    return render_template("homepage.html", pagename="Home", isInSession=is_in_session)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -41,7 +41,7 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and user.check_password(password):
             session["username"] = username
-            return redirect(url_for("dashboard"))
+            return redirect(url_for("dashboard", username=session["username"]))
         else:
             return render_template("login.html", pagename="Login", error="Invalid username or password!")
     return render_template("login.html", pagename="Login")
@@ -63,7 +63,7 @@ def signup():
 
         session["username"] = username
 
-        return redirect(url_for("dashboard"))
+        return redirect(url_for("dashboard", username=session["username"]))
     return render_template("signup.html", pagename="Signup")
 
 
@@ -78,11 +78,13 @@ def logout():
 
 @app.route("/dashboard")
 def dashboard():
+    is_in_session = False
     if "username" in session:
         username = session["username"]
+        is_in_session = True
     else:
         return redirect(url_for("home"))
-    return render_template("dashboard.html", pagename="Dashboard", username=username)
+    return render_template("dashboard.html", pagename="Dashboard", username=username, isInSession=is_in_session)
 
 # ***/
 

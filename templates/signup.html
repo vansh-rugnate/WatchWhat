@@ -11,15 +11,16 @@
 
 {% block body %}
 <div id="signup-section" class="container form-flexbox">
+        <h1>Register to create your free account</h1>
         {% if error %}
         <p id="signup-error" class="error">{{error}}</p>
         {% endif %}
         <form id="signup-form" class="form" action="{{url_for('signup')}}" method="post">
-                <input type="text" name="username" value="" placeholder="Enter a username" id="username-signup-field" class="input-field">
-                <input type="password" name="password" value="" placeholder="Enter a password" id="password-signup-field" class="input-field">
+                <input type="text" name="username" value="" placeholder="Username" id="username-signup-field" class="input-field">
+                <input type="password" name="password" value="" placeholder="Password" id="password-signup-field" class="input-field">
                 <div class="show-password-container">
                         <input type="checkbox" onclick="togglePassword()" id="toggle-password">
-                        <label for="toggle-password">Show Password</label>
+                        <label class="toggle-password-label" for="toggle-password">Show Password</label>
                 </div>
                 <input type="submit" value="Sign Up" id="signup-button" class="button">
         </form>

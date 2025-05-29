@@ -11,15 +11,16 @@
 
 {% block body %}
 <div id="login-section" class="container form-flexbox">
+        <h1>Log into your account to access your dashboard</h1>
         {% if error %}
         <p id="login-error" class="error">{{error}}</p>
         {% endif %}
         <form id="login-form" class="form" action="{{url_for('login')}}" method="post">
-                <input type="text" name="username" placeholder="Enter your username" id="username-login-field" class="input-field">
-                <input type="password" name="password" placeholder="Enter your password" id="password-login-field" class="input-field">
+                <input type="text" name="username" placeholder="Username" id="username-login-field" class="input-field">
+                <input type="password" name="password" placeholder="Password" id="password-login-field" class="input-field">
                 <div class="show-password-container">
                         <input type="checkbox" onclick="togglePassword()" id="toggle-password">
-                        <label for="toggle-password">Show Password</label>
+                        <label class="toggle-password-label" for="toggle-password">Show Password</label>
                 </div>
                 <input type="submit" value="Login" id="login-button" class="button">
         </form>
