@@ -6,12 +6,18 @@
 
 {% block links %}
 {% if isInSession %}
-<a href="{{url_for('dashboard')}}">Dashboard</a>
-<a href="{{url_for('logout')}}">Logout</a>
+<a class="dashboard-link" href="{{url_for('home')}}">Movies</a>
+<a class="dashboard-link" href="{{url_for('home')}}">TV Shows</a>
+<a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
+<a class="dashboard-link" href="{{url_for('dashboard')}}">Dashboard</a>
+<a class="logout-button dashboard-button" href="{{url_for('logout')}}">Logout</a>
 {% endif %}
 {% if not isInSession %}
-<a href="{{url_for('login')}}">Login</a>
-<a href="{{url_for('signup')}}">Signup</a>
+<a class="dashboard-link" href="{{url_for('home')}}">Movies</a>
+<a class="dashboard-link" href="{{url_for('home')}}">TV Shows</a>
+<a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
+<a class="login-button dashboard-button" href="{{url_for('login')}}">Login</a>
+<a class="signup-button dashboard-button" href="{{url_for('signup')}}">Signup</a>
 {% endif %}
 {% endblock %}
 {% block body %}
