@@ -255,6 +255,7 @@ body {
     font-family: Gill Sans, sans-serif;
     border-radius: 0.5rem;
     box-shadow: 1px 1px 15px grey;
+    line-height: 250%;
 }
 
 #DUMMY-HOMEPAGE-SECTION-2 {
@@ -279,6 +280,7 @@ body {
 }
 .DUMMY-CONTAINER-2 ol {
     margin-left: 20%;
+    line-height: 400%;
 }
 .DUMMY-CONTAINER-2 ol li {
     font-size: 1.5rem;
