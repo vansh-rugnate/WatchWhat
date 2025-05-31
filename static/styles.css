@@ -1,18 +1,18 @@
 /* Basic reset for body and common elements */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
-  background-color: rgba(241, 241, 255, 1);
-  color: #000;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    background-color: rgba(241, 241, 255, 1);
+    font-family: sans-serif;
+    color: #000;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 
@@ -93,6 +93,13 @@ body {
     background-color: rgba(0, 135, 0, 0.8);
     color: white;
     text-decoration: none;
+}
+
+.login-button {
+    background-color: rgba(0, 169, 0, 0.8);
+}
+.login-button:hover {
+    background-color: rgba(0, 135, 0, 0.8);
 }
 
 .signup-button {
@@ -204,11 +211,10 @@ body {
 /*  FOOTER  */
 
 #footer {
-    height: 12rem;
     background-color: rgba(28, 28, 104, 1);
     color: white;
     box-shadow: inset 0px -5px 10px 10px rgba(19, 19, 73, 1);
-    padding: 3rem;
+    padding: 4rem;
     font-family: Verdana, sans-serif;
     display: flex;
     flex-direction: column;
@@ -225,26 +231,32 @@ body {
 
 /************ DUMMY ***********/
 
+
+#DUMMY-HOMEPAGE-SECTION-1 {
+    background-color: rgba(241, 241, 255, 1);
+    padding: 5rem;
+}
+
 .DUMMY-CONTAINER-1 {
-    width: 75%;
-    height: 107rem;
+    width: 90%;
     padding: 3rem;
-    padding-left: 10rem;
-    padding-right: 10rem;
-    margin-left: 12.5%;
-    margin-top: 5rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    margin-left: 5%;
     font-size: 1.5rem;
     font-family: sans-serif;
 }
 
+#DUMMY-HOMEPAGE-SECTION-2 {
+    background-color: rgba(207, 207, 216, 0.8);
+    padding: 5rem;
+}
+
 .DUMMY-CONTAINER-2 {
     width: 75%;
-    height: 20rem;
-    padding: 2rem;
+    padding: 5rem;
     padding-left: 10rem;
     margin-left: 12.5%;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
     font-family: sans-serif;
 }
 .DUMMY-CONTAINER-2 h1 {
@@ -264,5 +276,5 @@ body {
     display: flex;
     flex-direction: row;
     gap: 7rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
