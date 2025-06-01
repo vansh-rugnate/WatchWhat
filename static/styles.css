@@ -176,6 +176,11 @@ body {
     margin-right: 25rem;
 }
 
+.toggle-password {
+    height: 1rem;
+    width: 1rem;
+}
+
 .toggle-password-label {
     font-size: 1rem;
     font-family: Gill Sans, sans-serif;

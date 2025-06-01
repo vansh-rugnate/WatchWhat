@@ -7,6 +7,7 @@
 {% block links %}
 {% if isInSession %}
 <a class="dashboard-link" href="{{url_for('home')}}">Home</a>
+<a class="dashboard-link" href="{{url_for('home')}}">Profile</a>
 <a class="logout-button dashboard-button" href="{{url_for('logout')}}">Logout</a>
 {% endif %}
 {% endblock %}
