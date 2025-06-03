@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Error404</title>
+</head>
+<body>
+    <div class="header">
+        <div id="homepage-titles">
+            <p id="title">WatchWhat</p>
+        </div>
+        <div id="nav-links">
+            {% if isInSession %}
+            <a class="dashboard-link" href="{{url_for('home')}}">Home</a>
+            <a class="dashboard-link" href="{{url_for('home')}}">Movies</a>
+            <a class="dashboard-link" href="{{url_for('home')}}">TV Shows</a>
+            <a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
+            <a class="dashboard-link" href="{{url_for('dashboard')}}">Dashboard</a>
+            <a class="dashboard-link" href="{{url_for('home')}}">Profile</a>
+            <a class="logout-button dashboard-button" href="{{url_for('logout')}}">Logout</a>
+            {% endif %}
+            {% if not isInSession %}
+            <a class="dashboard-link" href="{{url_for('home')}}">Home</a>
+            <a class="dashboard-link" href="{{url_for('home')}}">Movies</a>
+            <a class="dashboard-link" href="{{url_for('home')}}">TV Shows</a>
+            <a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
+            <a class="login-button dashboard-button" href="{{url_for('login')}}">Login</a>
+            <a class="signup-button dashboard-button" href="{{url_for('signup')}}">Signup</a>
+            {% endif %}
+        </div>
+    </div>
+    <div id="error404">
+        <h1 class="error-404">Oops, it appears you are lost :&#40;</h1>
+        {% if isInSession %}
+        <h1 class="error-404">Return to the homepage or your dashboard and try again</h1>
+        {% endif %}
+        {% if not isInSession %}
+        <h1 class="error-404">Return to the homepage</h1>
+        {% endif %}
+    </div>
+</body>
+</html>

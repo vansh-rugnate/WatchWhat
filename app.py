@@ -64,7 +64,7 @@ def signup():
         session["username"] = username
 
         return redirect(url_for("dashboard", username=session["username"]))
-    return render_template("signup.html", pagename="Signup")
+    return render_template("signup.html", pagename="Sign Up")
 
 
 @app.route("/logout")
@@ -85,6 +85,14 @@ def dashboard():
     else:
         return redirect(url_for("home"))
     return render_template("dashboard.html", pagename="Dashboard", username=username, isInSession=is_in_session)
+
+
+@app.errorhandler(404)
+def invalid_route(e):
+    is_in_session = False
+    if "username" in session:
+        is_in_session = True
+    return render_template("error-page.html", isInSession=is_in_session)
 
 # ***/
 
