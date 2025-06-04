@@ -220,16 +220,28 @@ body {
     margin-right: 20rem;
 }
 
-.error-404 {
-    text-align: center;
-    color:red;
-    font-size: 2.5rem;
-    margin-top: 10rem;
-    line-height: 0;
-    font-family: Chalkduster, fantasy;
+#error404-body {
+    height: 91.3vh;
+    background-color: black;
 }
-.error-404 h1 {
-    margin-top: 0;
+
+#error404 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 7rem;
+    padding-top: 8rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    font-size: 1.5rem;
+    color: rgba(195, 1, 1, 0.9);
+    font-family: Courier, monospace;
+}
+#error404 h1 {
+    font-size: 2.5rem;
+}
+#error404 div p {
+    font-size: 2rem;
 }
 
 

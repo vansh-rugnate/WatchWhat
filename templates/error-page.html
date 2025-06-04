@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/styles.css">
-    <title>Error404</title>
+    <title>Page Not Found</title>
 </head>
 <body>
     <div class="header">
@@ -12,33 +12,40 @@
             <p id="title">WatchWhat</p>
         </div>
         <div id="nav-links">
-            {% if isInSession %}
-            <a class="dashboard-link" href="{{url_for('home')}}">Home</a>
-            <a class="dashboard-link" href="{{url_for('home')}}">Movies</a>
-            <a class="dashboard-link" href="{{url_for('home')}}">TV Shows</a>
-            <a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
-            <a class="dashboard-link" href="{{url_for('dashboard')}}">Dashboard</a>
-            <a class="dashboard-link" href="{{url_for('home')}}">Profile</a>
-            <a class="logout-button dashboard-button" href="{{url_for('logout')}}">Logout</a>
-            {% endif %}
-            {% if not isInSession %}
-            <a class="dashboard-link" href="{{url_for('home')}}">Home</a>
-            <a class="dashboard-link" href="{{url_for('home')}}">Movies</a>
-            <a class="dashboard-link" href="{{url_for('home')}}">TV Shows</a>
-            <a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
-            <a class="login-button dashboard-button" href="{{url_for('login')}}">Login</a>
-            <a class="signup-button dashboard-button" href="{{url_for('signup')}}">Signup</a>
-            {% endif %}
         </div>
     </div>
-    <div id="error404">
-        <h1 class="error-404">Oops, it appears you are lost :&#40;</h1>
-        {% if isInSession %}
-        <h1 class="error-404">Return to the homepage or your dashboard and try again</h1>
-        {% endif %}
-        {% if not isInSession %}
-        <h1 class="error-404">Return to the homepage</h1>
-        {% endif %}
+    <div id="error404-body">
+        <div id="error404">
+            <h1>Oops, it appears we have misplaced what you are looking for 😕</h1>
+            {% if isInSession %}
+            <div>
+                <p>
+                    Return to the 
+                    <a href="{{url_for('home')}}">homepage</a>
+                </p>
+                <p>
+                    Go to your 
+                    <a href="{{url_for('dashboard')}}">dashboard</a>
+                </p>
+            </div>
+            {% endif %}
+            {% if not isInSession %}
+            <div>
+                <p>
+                Return to the 
+                <a href="{{url_for('home')}}">homepage</a>
+                </p>
+                <p>
+                    <a href="{{url_for('login')}}">Login</a>
+                    to your account
+                </p>
+                <p>
+                    <a href="{{url_for('signup')}}">Signup</a>
+                    to create an account
+                </p>
+            </div>
+            {% endif %}
+        </div>
     </div>
 </body>
 </html>
