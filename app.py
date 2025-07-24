@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, session, redirect, request
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
+import requests
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.db"
@@ -84,7 +85,37 @@ def dashboard():
         is_in_session = True
     else:
         return redirect(url_for("home"))
-    return render_template("dashboard.html", pagename="Dashboard", username=username, isInSession=is_in_session)
+    url = "https://api.themoviedb.org/3/discover/movie?primary_release_year=2000"
+    headers = {
+        "accept": "application/json",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MWVhNjI5MWJjYjA0MjVlYTRiZWJmMTNmOTcyOTVlMiIsIm5iZiI6MTc1MzI5NDQzOS44MjA5OTk5LCJzdWIiOiI2ODgxMjY2NzZhMzgwNGMyMGUxNmFmZDAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.5xA_CIxcW_VCkJPl-NrOyEUobnBwndzWmrhijGVc62o"
+    }
+    response = requests.get(url, headers=headers)
+    return render_template("dashboard.html", pagename="Dashboard", username=username, isInSession=is_in_session, api_data=response.text)
+
+
+@app.route("/movies")
+def search_movies():
+    if "username" in session:
+        return render_template("movies.html")
+    else:
+        return redirect(url_for("home"))
+    
+
+@app.route("/tvshows")
+def search_tvshows():
+    if "username" in session:
+        return render_template("tvshows.html")
+    else:
+        return redirect(url_for("home"))
+    
+
+@app.route("/all-tv")
+def search_all():
+    if "username" in session:
+        return render_template("all-tv.html")
+    else:
+        return redirect(url_for("home"))
 
 
 @app.errorhandler(404)

@@ -1,21 +1,19 @@
 {% extends "base.html" %}
 
-{% block pagename %}
-<p class="pagename">{{pagename}}</p>
-{% endblock %}
-
 {% block links %}
 {% if isInSession %}
-<a class="dashboard-link" href="{{url_for('home')}}">Movies</a>
-<a class="dashboard-link" href="{{url_for('home')}}">TV Shows</a>
+<a class="dashboard-link" href="{{url_for('search_movies')}}">Movies</a>
+<a class="dashboard-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
+<a class="dashboard-link" href="{{url_for('search_all')}}">Search All</a>
 <a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
 <a class="dashboard-link" href="{{url_for('dashboard')}}">Dashboard</a>
 <a class="dashboard-link" href="{{url_for('home')}}">Profile</a>
 <a class="logout-button dashboard-button" href="{{url_for('logout')}}">Logout</a>
 {% endif %}
 {% if not isInSession %}
-<a class="dashboard-link" href="{{url_for('home')}}">Movies</a>
-<a class="dashboard-link" href="{{url_for('home')}}">TV Shows</a>
+<a class="dashboard-link" href="{{url_for('search_movies')}}">Movies</a>
+<a class="dashboard-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
+<a class="dashboard-link" href="{{url_for('search_all')}}">Search All</a>
 <a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
 <a class="login-button dashboard-button" href="{{url_for('login')}}">Login</a>
 <a class="signup-button dashboard-button" href="{{url_for('signup')}}">Signup</a>
@@ -74,6 +72,18 @@
             <li>Rate and review content</li>
             <li>Get alerts for new releases</li>
         </ol>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <h1>
+            <p>
+                <a href="{{url_for('login')}}">Login</a>
+                or
+                <a href="{{url_for('signup')}}">Signup</a>
+                to find a movie or tv show to watch!
+            </p>
+        </h1>
     </div>
 </div>
 {% endblock %}

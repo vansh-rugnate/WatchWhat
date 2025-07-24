@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block links %}
+<a class="dashboard-link" href="{{url_for('home')}}">Home</a>
+<a class="dashboard-link" href="{{url_for('search_movies')}}">Movies</a>
+<a class="dashboard-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
+<a class="dashboard-link" href="{{url_for('search_all')}}">Search All</a>
+<a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
+<a class="dashboard-link" href="{{url_for('dashboard')}}">Dashboard</a>
+<a class="dashboard-link" href="{{url_for('home')}}">Profile</a>
+<a class="logout-button dashboard-button" href="{{url_for('logout')}}">Logout</a>
+{% endblock %}
+
+{% block body %}
+<h1>Can't decide what to watch?</h1>
+<h1>We know what it's like spending more time trying to find something to watch rather than actually watching 
+    - we've got your back.
+</h1>
+<br>
+<p>Use our tool to get a movie or tv show recommendation based on your applied filters!</p>
+{% endblock %}

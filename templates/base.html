@@ -9,8 +9,6 @@
         <div class="header">
                 <div id="homepage-titles">
                         <p id="title">WatchWhat</p>
-                        {% block pagename %}
-                        {% endblock %}
                 </div>
                 <div id="nav-links">
                         {% block links %}
@@ -23,10 +21,11 @@
         </div>
         <footer id="footer">
                 <div id="footer-links">
-                        <a class="dashboard-link" href={{url_for('home')}}>Home</a>
-                        <a class="dashboard-link" href={{url_for('home')}}>Movies</a>
-                        <a class="dashboard-link" href={{url_for('home')}}>TV Shows</a>
-                        <a class="dashboard-link" href="{{url_for('home')}}">Profile</a>
+                        <a class="dashboard-link" href="{{url_for('home')}}">Home</a>
+                        <a class="dashboard-link" href="{{url_for('search_movies')}}">Movies</a>
+                        <a class="dashboard-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
+                        <a class="dashboard-link" href="{{url_for('search_all')}}">Search All</a>
+                        <a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
                 </div>
                 <p>© 2025 WatchWhat by Vansh Itendra Rugnate. All rights reserved.</p>
         </footer>
