@@ -85,22 +85,49 @@ def dashboard():
         is_in_session = True
     else:
         return redirect(url_for("home"))
-    url = "https://api.themoviedb.org/3/discover/movie?primary_release_year=2000"
-    headers = {
-        "accept": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MWVhNjI5MWJjYjA0MjVlYTRiZWJmMTNmOTcyOTVlMiIsIm5iZiI6MTc1MzI5NDQzOS44MjA5OTk5LCJzdWIiOiI2ODgxMjY2NzZhMzgwNGMyMGUxNmFmZDAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.5xA_CIxcW_VCkJPl-NrOyEUobnBwndzWmrhijGVc62o"
-    }
-    response = requests.get(url, headers=headers)
-    return render_template("dashboard.html", pagename="Dashboard", username=username, isInSession=is_in_session, api_data=response.text)
+    return render_template("dashboard.html", pagename="Dashboard", username=username, isInSession=is_in_session)
 
 
-@app.route("/movies")
+@app.route("/movies", methods=["GET", "POST"])
 def search_movies():
     if "username" in session:
-        return render_template("movies.html")
+        raw_api_data = None
+        movie_titles = []
+        if request.method == "POST":
+            url = "https://api.themoviedb.org/3/discover/movie"
+            headers = {
+                "accept": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MWVhNjI5MWJjYjA0MjVlYTRiZWJmMTNmOTcyOTVlMiIsIm5iZiI6MTc1MzI5NDQzOS44MjA5OTk5LCJzdWIiOiI2ODgxMjY2NzZhMzgwNGMyMGUxNmFmZDAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.5xA_CIxcW_VCkJPl-NrOyEUobnBwndzWmrhijGVc62o"
+            }
+            params = {
+                "with_genres" : request.form["genre"],
+                "with_runtime.lte" : request.form["runtime_lte"],
+                "with_original_language" : request.form["original_language"],
+                "primary_release_year" : request.form["release_year"]
+            }
+            response = requests.get(url, headers=headers, params=params)
+            raw_api_data = response.json()
+            total_pages = raw_api_data['total_pages'] # Get total number of pages from API response
+            movies = raw_api_data['results']
+            for movie in movies:
+                movie_titles.append(movie['original_title'])
+            for i in range(2,total_pages+1):
+                params = {
+                    "with_genres" : request.form["genre"],
+                    "with_runtime.lte" : request.form["runtime_lte"],
+                    "with_original_language" : request.form["original_language"],
+                    "primary_release_year" : request.form["release_year"],
+                    "page" : i
+                }
+                response = requests.get(url, headers=headers, params=params)
+                raw_api_data = response.json()
+                movies = raw_api_data['results']
+                for movie in movies:
+                    movie_titles.append(movie['original_title'])
+        return render_template("movies.html", api_data=movie_titles)
     else:
         return redirect(url_for("home"))
-    
+
 
 @app.route("/tvshows")
 def search_tvshows():

@@ -3,6 +3,7 @@
 {% block links %}
 {% if isInSession %}
 <a class="dashboard-link" href="{{url_for('home')}}">Home</a>
+<a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
 <a class="dashboard-link" href="{{url_for('home')}}">Profile</a>
 <a class="logout-button dashboard-button" href="{{url_for('logout')}}">Logout</a>
 {% endif %}
@@ -14,5 +15,4 @@
 <a href="{{url_for('search_movies')}}">Movies</a>
 <a href="{{url_for('search_tvshows')}}">TV Shows</a>
 <a href="{{url_for('search_all')}}">Search All</a>
-<p>{{api_data}}</p>
 {% endblock %}

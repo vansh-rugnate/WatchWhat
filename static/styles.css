@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: rgba(241, 241, 255, 1);
+    /*background-color: rgba(241, 241, 255, 1);*/
+    /*background-image: linear-gradient(rgba(241, 241, 255, 1),rgba(207, 207, 216, 0.8),black);*/
     font-family: sans-serif;
     color: #000;
     line-height: 1.6;
@@ -34,7 +35,7 @@ body {
     padding: 0.5rem;
     border-radius: 0.3rem;
     color: rgba(42, 184, 255, 1);
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: Marker Felt, fantasy;
 }
 
@@ -271,7 +272,7 @@ body {
 
 
 #DUMMY-HOMEPAGE-SECTION-1 {
-    background-color: rgba(241, 241, 255, 1);
+    /*background-color: rgba(241, 241, 255, 1);*/
     padding: 5rem;
 }
 
@@ -284,37 +285,37 @@ body {
     font-size: 1.8rem;
     font-family: Gill Sans, sans-serif;
     border-radius: 0.5rem;
+    border-top: 1rem solid black;
     box-shadow: 1px 1px 15px grey;
     line-height: 250%;
 }
 
 #DUMMY-HOMEPAGE-SECTION-2 {
-    background-color: rgba(207, 207, 216, 0.8);
+    /*background-color: rgba(207, 207, 216, 0.8);*/
     padding: 5rem;
 }
 
 .DUMMY-CONTAINER-2 {
-    width: 75%;
+    width: 90%;
     padding: 5rem;
-    padding-left: 10rem;
-    margin-left: 12.5%;
+    margin-left: 5%;
     font-family: Gill Sans, sans-serif;
     border-radius: 0.5rem;
+    border-top: 1rem solid black;
     box-shadow: 1px 1px 15px grey;
 }
 .DUMMY-CONTAINER-2 h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
-    margin-left: 5%;
+    text-align: center;
 }
 .DUMMY-CONTAINER-2 ol {
-    margin-left: 20%;
     line-height: 400%;
 }
 .DUMMY-CONTAINER-2 ol li {
     font-size: 1.5rem;
-    margin: 1rem;
+    margin-left: 15rem;
 }
 
 #footer-links {
