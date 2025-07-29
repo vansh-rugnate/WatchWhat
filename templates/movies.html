@@ -79,12 +79,11 @@
         <input type="submit" value="Find">
     </form>
 </div>
-{% if api_data %}
 <div>
-    <h2>Movies</h2>
-    <p>{{api_data}}</p>
+    <h2>Movie Recommendation</h2>
+    <p>{{ title }}</p>
+    <img src="https://image.tmdb.org/t/p/w154{{ poster_url_path }}" alt="Poster for '{{ movie_title }}'">
 </div>
-{% endif %}
 <script>
 
     var select = document.getElementById("release-year-input");

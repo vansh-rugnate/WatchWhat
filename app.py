@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, session, redirect, request
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
+from random import randint
 import requests
 
 app = Flask(__name__)
@@ -92,8 +93,9 @@ def dashboard():
 def search_movies():
     if "username" in session:
         raw_api_data = None
-        movie_titles = []
+        movies = []
         if request.method == "POST":
+            # Handle first page of API Data
             url = "https://api.themoviedb.org/3/discover/movie"
             headers = {
                 "accept": "application/json",
@@ -108,9 +110,10 @@ def search_movies():
             response = requests.get(url, headers=headers, params=params)
             raw_api_data = response.json()
             total_pages = raw_api_data['total_pages'] # Get total number of pages from API response
-            movies = raw_api_data['results']
-            for movie in movies:
-                movie_titles.append(movie['original_title'])
+            movies_data = raw_api_data['results']
+            for movie in movies_data:
+                movies.append(movie['original_title'] + ":" + str(movie['id']))
+            # Handle rest of the pages of API Data
             for i in range(2,total_pages+1):
                 params = {
                     "with_genres" : request.form["genre"],
@@ -121,10 +124,26 @@ def search_movies():
                 }
                 response = requests.get(url, headers=headers, params=params)
                 raw_api_data = response.json()
-                movies = raw_api_data['results']
-                for movie in movies:
-                    movie_titles.append(movie['original_title'])
-        return render_template("movies.html", api_data=movie_titles)
+                movies_data = raw_api_data['results']
+                for movie in movies_data:
+                    movies.append(movie['original_title'] + ":" + str(movie['id']))
+            # Randomly choose one of those movies
+            random_num = randint(0,len(movies)-1)
+            random_movie = movies[random_num]
+            # Get a poster for the movie
+            movie_title = random_movie.split(":")[0]
+            movie_id = random_movie.split(":")[1]
+            url = f"https://api.themoviedb.org/3/movie/{movie_id}/images"
+            response = requests.get(url, headers=headers)
+            raw_api_data_images = response.json()
+            poster = raw_api_data_images.get('posters', [])
+            if poster:
+                poster_url = poster[0]['file_path']
+            else:
+                poster_url = None
+            
+            return render_template("movies.html", title=movie_title, poster_url_path=poster_url)
+        return render_template("movies.html")
     else:
         return redirect(url_for("home"))
 
