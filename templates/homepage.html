@@ -21,7 +21,7 @@
 {% endblock %}
 {% block body %}
 <div id="DUMMY-HOMEPAGE-SECTION-1">
-    <div class="container DUMMY-CONTAINER-1">
+    <div class="container DUMMY-CONTAINER-1 homepage-container">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus ultricies varius.
             Vivamus nec turpis vel tellus imperdiet efficitur non vitae nulla. Maecenas dignissim egestas magna,
@@ -62,28 +62,31 @@
     </div>
 </div>
 <div id="DUMMY-HOMEPAGE-SECTION-2">
-    <div class="container DUMMY-CONTAINER-2">
+    <div class="container DUMMY-CONTAINER-2 homepage-container">
         <h1>Benefits of having an account</h1>
-        <ol>
+        <ul>
             <li>Track watched movies and shows</li>
             <li>Get personalised recommendations</li>
             <li>Smart suggestions based on mood</li>
             <li>Sync across devices</li>
             <li>Rate and review content</li>
             <li>Get alerts for new releases</li>
-        </ol>
+        </ul>
     </div>
-</div>
-<div>
-    <div class="container">
-        <h1>
+    <div class="container DUMMY-CONTAINER-3 homepage-container">
+        <div class="container DUMMY-CONTAINER-4">
             <p>
-                <a href="{{url_for('login')}}">Login</a>
-                or
                 <a href="{{url_for('signup')}}">Signup</a>
-                to find a movie or tv show to watch!
+                now to create a free account and find amazing movies and tv shows to watch!
             </p>
-        </h1>
+        </div>
+        <div class="container DUMMY-CONTAINER-5">
+            <p>
+                Or
+                <a href="{{url_for('login')}}">Login</a>
+                to an existing account
+            </p>    
+        </div>
     </div>
 </div>
 {% endblock %}

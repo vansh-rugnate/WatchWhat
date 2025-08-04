@@ -145,7 +145,7 @@ def search_movies():
             return render_template("movies.html", title=movie_title, poster_url_path=poster_url)
         return render_template("movies.html")
     else:
-        return redirect(url_for("home"))
+        return redirect(url_for("login"))
 
 
 @app.route("/tvshows")

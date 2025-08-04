@@ -3,13 +3,13 @@
 <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
-        <link rel="icon" href="../static/favicon.png" type="image/x-icon">
+        <link rel="icon" href="../static/logo1.png" type="image/x-icon">
         <title>WatchWhat</title>
 </head>
 <body>
         <div class="header">
-                <div id="homepage-titles">
-                        <p id="title">WatchWhat</p>
+                <div>
+                        <img id="logo" src="/static/logo2.png" alt="LOGO">
                 </div>
                 <div id="nav-links">
                         {% block links %}
@@ -22,13 +22,13 @@
         </div>
         <footer id="footer">
                 <div id="footer-links">
-                        <a class="dashboard-link" href="{{url_for('home')}}">Home</a>
-                        <a class="dashboard-link" href="{{url_for('search_movies')}}">Movies</a>
-                        <a class="dashboard-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
-                        <a class="dashboard-link" href="{{url_for('search_all')}}">Search All</a>
-                        <a class="dashboard-link" href="{{url_for('home')}}">About Us</a>
+                        <a class="footer-link" href="{{url_for('home')}}">Home</a>
+                        <a class="footer-link" href="{{url_for('search_movies')}}">Movies</a>
+                        <a class="footer-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
+                        <a class="footer-link" href="{{url_for('search_all')}}">Search All</a>
+                        <a class="footer-link" href="{{url_for('home')}}">About Us</a>
                 </div>
-                <p>© 2025 WatchWhat by Vansh Itendra Rugnate. All rights reserved.</p>
+                <p>© 2025 WatchWhat! by Vansh Itendra Rugnate. All rights reserved.</p>
         </footer>
 </body>
 </html>
