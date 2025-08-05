@@ -162,6 +162,14 @@ def search_all():
         return render_template("all-tv.html")
     else:
         return redirect(url_for("home"))
+    
+
+@app.route("/aboutme")
+def about_me():
+    if "username" in session:
+        return render_template("aboutme.html", isInSession=True)
+    else:
+        return render_template("aboutme.html", isInSession=False)
 
 
 @app.errorhandler(404)
