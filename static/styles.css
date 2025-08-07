@@ -5,15 +5,11 @@
     box-sizing: border-box;
 }
 
-:root {
-    overscroll-behavior: none;
-}
-
 body {
     /*background-color: rgba(241, 241, 255, 1);*/
     /*background-image: linear-gradient(rgba(241, 241, 255, 1),rgba(207, 207, 216, 0.8),black);*/
     font-family: sans-serif;
-    color: #000;
+    background-color: rgb(227, 236, 239);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -28,11 +24,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*
     background-color: rgb(10, 10, 71);
+    */
+    background-image: url(space_banner.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow: inset 0 0 15px 5px rgb(10, 10, 49);
     padding: 0.7rem;
-    padding-left: 6rem;
-    padding-right: 5rem;
-    box-shadow: inset 0 0 8px 10px rgb(10, 10, 49);
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 /*
@@ -46,8 +47,8 @@ body {
 }
 */
 #logo {
-    width: 11rem;
-    height: 3rem;
+    width: 9rem;
+    height: 2.2rem;
     margin-top: 0.5rem;
 }
 
@@ -60,7 +61,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: Verdana, sans-serif;
 }
 
@@ -76,12 +77,13 @@ body {
 
 .dashboard-button {
     text-align: center;
-    height: 2.5rem;
-    width: 6rem;
+    height: 2rem;
+    width: 5rem;
     background-color: rgba(0, 169, 0, 0.8);
     color: white;
+    font-size: 0.8rem;
     text-decoration: none;
-    padding: 0.5rem;
+    padding-top: 0.4rem;
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 0.2rem;
@@ -118,12 +120,15 @@ body {
     background-color: white;
 }
 
+.login-signup {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
 .form-flexbox {
     width: 75%;
     height: 37rem;
-    margin-top: 4rem;
     margin-left: 12.5%;
-    margin-bottom: 4rem;
     border-radius: 0.6rem;
     box-shadow: 0 0 20px black;
     text-align: center;
@@ -251,10 +256,17 @@ body {
     margin-left: 1.5%;
 }
 #footer {
+    /*
     background-color: rgb(10, 10, 71);
-    color: white;
     box-shadow: inset 0 0 8px 10px rgb(10, 10, 49);
-    padding: 2.5rem;
+    */
+    background-image: url(space_banner.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow: inset 0 0 10px 8px rgb(10, 10, 49);
+    color: white;
+    font-size: 0.9rem;
+    padding: 2rem;
     font-family: Verdana, sans-serif;
     display: flex;
     flex-direction: row;
@@ -264,7 +276,7 @@ body {
 #footer-links {
     display: flex;
     flex-direction: row;
-    gap: 3rem;
+    gap: 2rem;
 }
 .footer-link {
     color: white;
@@ -289,63 +301,77 @@ body {
 .homepage-container {
     width: 95%;
     padding: 3rem;
-    font-family: Gill Sans, sans-serif;
     border-radius: 0.5rem;
-    border-top: 0.5rem solid black;
+    border-top: 0.4rem solid black;
     box-shadow: 1px 1px 15px grey;
     margin-left: 2.5%;
+    font-family: "Lato", sans-serif;
 }
 
 #DUMMY-HOMEPAGE-SECTION-1 {
     /*background-color: rgba(241, 241, 255, 1);*/
-    background-color: rgba(241, 241, 255, 1);
+    background-image: url(rick_and_morty_wallpaper);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     padding: 5rem;
 }
 .DUMMY-CONTAINER-1 {
+    opacity: 95%;
     padding-left: 6rem;
     padding-right: 6rem;
-    font-size: 1.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
     line-height: 250%;
 }
 
 #DUMMY-HOMEPAGE-SECTION-2 {
     /*background-color: rgba(207, 207, 216, 0.8);*/
     background-image: url(homepage-wallpaper-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     padding: 5rem;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     gap: 2rem;
 }
 
 .DUMMY-CONTAINER-2 {
-    flex: 1 1 60%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(246, 246, 246, 0.9);
 }
 .DUMMY-CONTAINER-2 h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 2rem;
 }
 .DUMMY-CONTAINER-2 ul {
     line-height: 300%;
     list-style-type: none;
+    font-family: "Lato", sans-serif;
 }
 .DUMMY-CONTAINER-2 ul li {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
+    word-spacing: 10%;
     color: white;
+    font-weight: 500;
     margin: 1rem;
-    background-color: rgb(104, 11, 11);
+    background-color: rgb(49, 2, 2);
     border-radius: 0.9rem;
     padding: 1rem;
-    width: 30rem;
+    width: 25rem;
     text-align: center;
 }
 
 .DUMMY-CONTAINER-3 {
-    flex: 1 1 40%;
-    background-color: rgb(220, 234, 234);
+    width: 25%;
+    height: 75%;
+    background-color: rgb(220, 234, 234, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -353,26 +379,24 @@ body {
     gap: 8rem;
     border-radius: 0.5rem;
     text-align: center;
+    line-height: 200%;
 }
 .DUMMY-CONTAINER-3 p {
-    font-size: 1.5rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
 }
 .DUMMY-CONTAINER-3 p a {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
 }
 .DUMMY-CONTAINER-3 p a:hover {
     color: rgba(220, 32, 32, 1);
 }
 
 .DUMMY-CONTAINER-4 {
-    width: 25rem;
-    padding: 3rem;
-    border-radius: 0.2rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
 }
 
 .DUMMY-CONTAINER-5 {
-    width: 25rem;
-    padding: 3rem;
-    border-radius: 0.2rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
 }

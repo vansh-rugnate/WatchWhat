@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
         <link rel="icon" href="../static/logo1.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <title>WatchWhat</title>
 </head>
 <body>
@@ -26,7 +29,7 @@
                         <a class="footer-link" href="{{url_for('search_movies')}}">Movies</a>
                         <a class="footer-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
                         <a class="footer-link" href="{{url_for('search_all')}}">Search All</a>
-                        <a class="footer-link" href="{{url_for('home')}}">About Me</a>
+                        <a class="footer-link" href="{{url_for('about_me')}}">About Me</a>
                 </div>
                 <p>© 2025 WatchWhat! by Vansh Itendra Rugnate. All rights reserved.</p>
         </footer>
