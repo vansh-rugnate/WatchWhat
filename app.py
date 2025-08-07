@@ -40,12 +40,24 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
 
-        user = User.query.filter_by(username=username).first()
-        if user and user.check_password(password):
-            session["username"] = username
-            return redirect(url_for("dashboard", username=session["username"]))
+        if username == '' and password == '':
+            print("Both fields empty")
+            return render_template("login.html", pagename="Login", error="Please enter a username and password")
+        elif username == '':
+            print("username field empty")
+            return render_template("login.html", pagename="Login", error="Please enter a username")
+        elif password == '':
+            print("password field empty")
+            return render_template("login.html", pagename="Login", error="Please enter a password")
         else:
-            return render_template("login.html", pagename="Login", error="Invalid username or password!")
+            user = User.query.filter_by(username=username).first()
+            if user and user.check_password(password):
+                session["username"] = username
+                return redirect(url_for("dashboard", username=session["username"]))
+            else:
+                print("wrong password or username")
+                return render_template("login.html", pagename="Login", error="Invalid username or password")
+        
     return render_template("login.html", pagename="Login")
 
 
@@ -55,8 +67,10 @@ def signup():
         username = request.form['username']
         password = request.form['password']
 
-        if User.query.filter_by(username=username).first():
-            return render_template("signup.html", pagename="Sign Up", error="This user is already registered!")
+        if username == '' and password == '':
+            return render_template("signup.html", pagename="Sign Up", error="Username and Password cannot be empty")
+        elif User.query.filter_by(username=username).first():
+            return render_template("signup.html", pagename="Sign Up", error="This user is already registered")
 
         new_user = User(username=username)
         new_user.set_password(password)

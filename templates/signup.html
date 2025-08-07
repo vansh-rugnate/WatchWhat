@@ -14,7 +14,10 @@
         <div id="signup-section" class="container form-flexbox">
                 <h1>Register to create your free account</h1>
                 {% if error %}
-                <p id="signup-error" class="error">{{error}}</p>
+                <div id="error-message-section">
+                        <img id="error-icon" src="../static/error_icon.png" alt="">
+                        <p id="signup-error" class="error">{{error}}</p>
+                </div>
                 {% endif %}
                 <form id="signup-form" class="form" action="{{url_for('signup')}}" method="post">
                         <input type="text" name="username" value="" placeholder="Username" id="username-signup-field" class="input-field">

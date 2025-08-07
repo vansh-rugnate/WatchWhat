@@ -14,7 +14,10 @@
         <div id="login-section" class="container form-flexbox">
                 <h1>Log into your account to access your dashboard</h1>
                 {% if error %}
-                <p id="login-error" class="error">{{error}}</p>
+                <div id="error-message-section">
+                        <img id="error-icon" src="../static/error_icon.png" alt="">
+                        <p id="login-error" class="error">{{error}}</p>
+                </div>
                 {% endif %}
                 <form id="login-form" class="form" action="{{url_for('login')}}" method="post">
                         <input type="text" name="username" placeholder="Username" id="username-login-field" class="input-field">
@@ -38,21 +41,5 @@
                         passwordField.type = "password";
                 }
         }
-
-        document.getElementById("login-form").addEventListener("submit", function(event) {
-                let username = document.getElementById("username-login-field").value;
-                let password = document.getElementById("password-login-field").value;
-
-                if (username === "" && password === "") {
-                        window.alert("Please enter a username and password!");
-                        event.preventDefault()
-                } else if (username === "") {
-                        window.alert("Please enter a username!");
-                        event.preventDefault()
-                } else if (password === "") {
-                        window.alert("Please enter a password!");
-                        event.preventDefault()
-                }
-        });
 </script>
 {% endblock %}

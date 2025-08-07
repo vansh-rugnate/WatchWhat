@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overscroll-behavior: none;
 }
 
 body {
@@ -121,28 +122,31 @@ body {
 }
 
 .login-signup {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    background-image: url(wallpaper-login-signup.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 4rem 0rem 4rem 0rem;
 }
 
 .form-flexbox {
-    width: 75%;
-    height: 37rem;
-    margin-left: 12.5%;
+    background-color: rgb(209, 228, 245);
+    color: black;
+    width: 85%;
+    height: 34.3rem;
+    margin-left: 7.5%;
     border-radius: 0.6rem;
     box-shadow: 0 0 20px black;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .form-flexbox h1 {
     margin-top: 1rem;
     margin-bottom: 2rem;
-    font-weight: 600;
-    font-family: Gill Sans, sans-serif;
+    font-size: 2.2rem;
+    font-family: "Fustat";
 }
 
 .form {
@@ -153,22 +157,24 @@ body {
 
 .input-field {
     width: 35rem;
-    height: 4rem;
+    height: 3.5rem;
     margin: 1rem;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border: none;
     border-radius: 0.3rem;
-    background-color: rgba(241, 241, 255, 1);
-    font-family: Gill Sans, sans-serif;
+    background-color: rgb(255, 255, 255);
+    font-family: "Lato";
+    letter-spacing: 0.1rem;
 }
 .input-field:focus {
     outline: none;
-    border-bottom: solid 5px rgba(28, 28, 104, 1);
+    border-bottom: solid 5px rgb(54, 56, 64);
     box-shadow: inset 0px 0px 10px grey;
 }
 .input-field:focus::placeholder {
     color: transparent;
+    font-size: 0.3rem;
 }
 
 .show-password-container {
@@ -189,12 +195,11 @@ body {
 }
 
 .form-button {
-    padding: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    width: 20rem;
+    height: 3.5rem;
     margin: 3rem;
     font-family: Verdana, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     background-color: rgba(28, 28, 104, 1);
     color: white;
     border-radius: 0.4rem;
@@ -215,11 +220,29 @@ body {
     background-color: rgba(0, 100, 188, 0.8);
 }
 
+#error-message-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+    margin-left: 21.5rem;
+}
 .error {
     color: red;
-    font-size: 1rem;
-    margin-right: 20rem;
+    font-size: 1.2rem;
+    font-family: "Lato";
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
 }
+#error-icon {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+
+
+
+/*  ERROR PAGE  */
 
 #error404-body {
     height: 91.3vh;
@@ -310,11 +333,20 @@ body {
 
 #DUMMY-HOMEPAGE-SECTION-1 {
     /*background-color: rgba(241, 241, 255, 1);*/
-    background-image: url(rick_and_morty_wallpaper);
+    background-image: url(rick_and_morty_2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 5rem;
+    padding: 5rem 5rem 10rem 5rem;
+    color: white;
+    font-family: "Fustat";
+}
+#DUMMY-HOMEPAGE-SECTION-1 h1 {
+    font-size: 4rem;
+}
+#DUMMY-HOMEPAGE-SECTION-1 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 35rem;
 }
 .DUMMY-CONTAINER-1 {
     opacity: 95%;
@@ -331,10 +363,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 5rem;
+    padding: 5rem 3rem 5rem 3rem;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -346,31 +378,31 @@ body {
     background-color: rgba(246, 246, 246, 0.9);
 }
 .DUMMY-CONTAINER-2 h1 {
-    font-size: 1.3rem;
+    font-size: 2.5rem;
     font-weight: 700;
+    font-family: "Fustat";
     margin-bottom: 2rem;
 }
 .DUMMY-CONTAINER-2 ul {
     line-height: 300%;
     list-style-type: none;
-    font-family: "Lato", sans-serif;
+    font-size: 1.4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
 }
 .DUMMY-CONTAINER-2 ul li {
-    font-size: 1.4rem;
-    word-spacing: 10%;
-    color: white;
     font-weight: 500;
-    margin: 1rem;
     background-color: rgb(49, 2, 2);
     border-radius: 0.9rem;
-    padding: 1rem;
-    width: 25rem;
+    padding: 0.5rem 4rem 0.5rem 4rem;
+    margin: 1rem;
     text-align: center;
 }
 
 .DUMMY-CONTAINER-3 {
     width: 25%;
     height: 75%;
+    padding: 3rem;
     background-color: rgb(220, 234, 234, 0.9);
     display: flex;
     flex-direction: column;
@@ -380,6 +412,7 @@ body {
     border-radius: 0.5rem;
     text-align: center;
     line-height: 200%;
+    font-family: "Fustat";
 }
 .DUMMY-CONTAINER-3 p {
     font-size: 1rem;
