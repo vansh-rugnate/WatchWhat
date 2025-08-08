@@ -24,8 +24,7 @@ class User(db.Model):
         return check_password_hash(self.password_hash, password)
 
 
-# ROUTES /***
-
+# Routes /***
 @app.route("/")
 def home():
     is_in_session = False
@@ -69,8 +68,12 @@ def signup():
 
         if username == '' and password == '':
             return render_template("signup.html", pagename="Sign Up", error="Username and Password cannot be empty")
+        elif username == '':
+            return render_template("signup.html", pagename="Sign Up", error="Username cannot be empty")
+        elif password == '':
+            return render_template("signup.html", pagename="Sign Up", error="Password cannot be empty")
         elif User.query.filter_by(username=username).first():
-            return render_template("signup.html", pagename="Sign Up", error="This user is already registered")
+            return render_template("signup.html", pagename="Sign Up", error="This user is already registered. Please login instead.")
 
         new_user = User(username=username)
         new_user.set_password(password)
@@ -249,7 +252,6 @@ def invalid_route(e):
     if "username" in session:
         is_in_session = True
     return render_template("error-page.html", isInSession=is_in_session)
-
 # ***/
 
 
