@@ -28,7 +28,7 @@ body {
     /*
     background-color: rgb(10, 10, 71);
     */
-    background-image: url(space_banner.jpg);
+    background-image: url(/static/header-footer/space_banner.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     box-shadow: inset 0 0 15px 5px rgb(10, 10, 49);
@@ -122,7 +122,7 @@ body {
 }
 
 .login-signup {
-    background-image: url(wallpaper-login-signup.jpg);
+    background-image: url(/static/login-signup/wallpaper-login-signup.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     padding: 4rem 0rem 4rem 0rem;
@@ -283,7 +283,7 @@ body {
     background-color: rgb(10, 10, 71);
     box-shadow: inset 0 0 8px 10px rgb(10, 10, 49);
     */
-    background-image: url(space_banner.jpg);
+    background-image: url(/static/header-footer/space_banner.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     box-shadow: inset 0 0 10px 8px rgb(10, 10, 49);
@@ -333,11 +333,11 @@ body {
 
 #DUMMY-HOMEPAGE-SECTION-1 {
     /*background-color: rgba(241, 241, 255, 1);*/
-    background-image: url(rick_and_morty_2.jpg);
+    background-image: url(/static/homepage/rick_and_morty_2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 5rem 5rem 10rem 5rem;
+    padding: 5rem 5rem 5rem 5rem;
     color: white;
     font-family: "Fustat";
 }
@@ -346,7 +346,7 @@ body {
 }
 #DUMMY-HOMEPAGE-SECTION-1 h2 {
     font-size: 2rem;
-    margin-bottom: 35rem;
+    margin-bottom: 45rem;
 }
 .DUMMY-CONTAINER-1 {
     opacity: 95%;
@@ -359,7 +359,7 @@ body {
 
 #DUMMY-HOMEPAGE-SECTION-2 {
     /*background-color: rgba(207, 207, 216, 0.8);*/
-    background-image: url(homepage-wallpaper-3.jpg);
+    background-image: url(/static/homepage/homepage-wallpaper-3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -371,7 +371,7 @@ body {
 }
 
 .DUMMY-CONTAINER-2 {
-    width: 75%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -394,15 +394,24 @@ body {
     font-weight: 500;
     background-color: rgb(49, 2, 2);
     border-radius: 0.9rem;
-    padding: 0.5rem 4rem 0.5rem 4rem;
+    padding: 0.5rem 2.5rem 0.5rem 2.5rem;
     margin: 1rem;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.DUMMY-CONTAINER-2 ul li img {
+    width: 3rem;
+    height: 3rem;
 }
 
 .DUMMY-CONTAINER-3 {
-    width: 25%;
+    width: 30%;
     height: 75%;
-    padding: 3rem;
+    padding: 2.5rem;
     background-color: rgb(220, 234, 234, 0.9);
     display: flex;
     flex-direction: column;
@@ -415,10 +424,11 @@ body {
     font-family: "Fustat";
 }
 .DUMMY-CONTAINER-3 p {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    padding: 2rem;
 }
 .DUMMY-CONTAINER-3 p a {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
 .DUMMY-CONTAINER-3 p a:hover {
     color: rgba(220, 32, 32, 1);
