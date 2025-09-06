@@ -424,11 +424,11 @@ body {
     font-family: "Fustat";
 }
 .DUMMY-CONTAINER-3 p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 2rem;
 }
 .DUMMY-CONTAINER-3 p a {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 .DUMMY-CONTAINER-3 p a:hover {
     color: rgba(220, 32, 32, 1);

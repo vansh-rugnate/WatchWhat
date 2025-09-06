@@ -2,6 +2,7 @@
 
 {% block links %}
 {% if isInSession %}
+<a class="dashboard-link" href="{{url_for('home')}}">Home</a>
 <a class="dashboard-link" href="{{url_for('search_movies')}}">Movies</a>
 <a class="dashboard-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
 <a class="dashboard-link" href="{{url_for('search_all')}}">Search All</a>
