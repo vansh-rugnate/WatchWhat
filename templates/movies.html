@@ -80,9 +80,15 @@
     </form>
 </div>
 <div>
-    <h2>Movie Recommendation</h2>
-    <p>{{ title }}</p>
-    <img src="https://image.tmdb.org/t/p/w154{{ poster_url_path }}" alt="Poster for '{{ title }}'">
+    {% if error %}
+        <p>{{error}}</p>
+    {% else %}
+        <h2>Movie Recommendation</h2>
+        <p>{{ title }}</p>
+        {% if poster_url_path %}
+            <img src="https://image.tmdb.org/t/p/w154{{ poster_url_path }}" alt="Poster for '{{ title }}'">
+        {% endif %}
+    {% endif %}
 </div>
 <script>
     var select = document.getElementById("release-year-input");

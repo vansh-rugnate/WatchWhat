@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block links %}
-{% if isInSession %}
+{% if logged_in %}
 <a class="dashboard-link" href="{{url_for('search_movies')}}">Movies</a>
 <a class="dashboard-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
 <a class="dashboard-link" href="{{url_for('search_all')}}">Search All</a>
@@ -10,7 +10,7 @@
 <a class="dashboard-link" href="{{url_for('home')}}">Profile</a>
 <a class="logout-button dashboard-button" href="{{url_for('logout')}}">Logout</a>
 {% endif %}
-{% if not isInSession %}
+{% if not logged_in %}
 <a class="dashboard-link" href="{{url_for('search_movies')}}">Movies</a>
 <a class="dashboard-link" href="{{url_for('search_tvshows')}}">TV Shows</a>
 <a class="dashboard-link" href="{{url_for('search_all')}}">Search All</a>
