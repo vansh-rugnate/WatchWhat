@@ -18,7 +18,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-WatchWhat! is a web application designed to help users <b>discover movies and TV shows</b> when they don’t know what to watch. Instead of endlessly scrolling through streaming platforms, users can apply <b>filters</b> and instantly receive a <b>randomised recommendation</b> that matches their preferences. The app fetches data using the <b>TMDb API</b>, ensuring up-to-date information on movies and TV shows.
+WatchWhat! is a personal project web application designed to help users <b>discover movies and TV shows</b> when they don’t know what to watch. Instead of endlessly scrolling through streaming platforms, users can apply <b>filters</b> and instantly receive a <b>randomised recommendation</b> that matches their preferences. The app fetches data using the <b>TMDb API</b>, ensuring up-to-date information on movies and TV shows.
 
 The app allows users to refine their search using filters such as genre, release year, runtime, and original language, making it easier to find something that fits their mood. Once filters are applied, the application generates a random movie or TV show suggestion from the matching results, <b>encouraging exploration</b> and helping users <b>discover content</b> they may not have considered before.
 
