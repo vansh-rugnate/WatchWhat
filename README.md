@@ -60,6 +60,19 @@ These are some features I will add:
 
 
 
+## Screenshots
+![Screenshot 1 of homepage](static/homepage.png)
+The homepage features a sleek navigation bar that is consistent with all pages.
+
+-
+-
+-
+
+![Screenshot 2 of homepage](static/homepage2.png)
+Some features that are included with a free account.
+
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [github-badge]: https://img.shields.io/badge/-Vansh%20Rugnate-black?style=for-the-badge&logo=linkedin&colorB=282928
